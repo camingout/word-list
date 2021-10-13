@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{% block title %} Список унікальних слів {% endblock %}</h1>
+<form action = "http://localhost:5000/result" method = "POST">
+<form method="post">
+    <div class="form-group">
+        <label for="separator">Розділювач</label>
+        <textarea name="separator" placeholder="separator"
+                  class="form-control">{{ request.form['separator'] }}</textarea>
+        <label for="content">Поле для даних</label>
+        <textarea name="content" placeholder="Post content"
+                  class="form-control">{{ request.form['content'] }}</textarea>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>
+
+{% endblock %}
