@@ -4,7 +4,7 @@ from flask import Flask, render_template, request, url_for, flash, redirect
 app = Flask(__name__)
 
 
-@app.route('/')
+@app.route('https://words-list.herokuapp.com/')
 def index():
     # persons = persons.spis
     return render_template('index.html')
