@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 from flask import Flask, render_template, request, url_for, flash, redirect
 
 app = Flask(__name__)
