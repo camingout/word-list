@@ -4,14 +4,14 @@ from flask import Flask, render_template, request, url_for, flash, redirect
 app = Flask(__name__)
 
 
-@app.route('/')
+@app.route("/")
 def index():
     # persons = persons.spis
     return render_template('index.html')
     #return "Hello World"
 
 
-@app.route('/result',methods = ['POST', 'GET'])
+@app.route("/result",methods = ['POST', 'GET'])
 def final():
     if request.method == 'POST':
         separator = request.form['separator']
