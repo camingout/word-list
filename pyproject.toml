@@ -1,4 +1,11 @@
 [tool.vercel]
- entrypoint = "backend.server:app"
+ entrypoint = "app:app"
 [tool.vercel.scripts]
  build = "python app.py"
+[project]
+name = "worlds-list"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "Flask==1.1.2",
+]
