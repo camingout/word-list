@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>{% block title %} {% endblock %}</h1>
+{% block title %} Розбити текст по розділювачу | Прибрати переноси з тексту | SeoTools {% endblock %}
     <h2 class="h5 mt-3">Розділити текст</h2>
 <form action="{{ url_for('final') }}" method="post">
     <div class="form-group mb-2">
