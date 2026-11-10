@@ -2,13 +2,32 @@
 
 {% block content %}
 <h1>{% block title %} Список унікальних слів {% endblock %}</h1>
+
 <form method="post">
     <div class="form-group">
-         {% for value in result %}
-               {{ value }} <br />
-         {% endfor %}
+        <div id="result-text">
+            {% for value in result %}
+                {{ value }} <br />
+            {% endfor %}
+        </div>
     </div>
 
+    <button type="button" id="copy-btn" class="btn btn-primary">Скопіювати результат</button>
 </form>
+
+<script>
+document.getElementById('copy-btn').addEventListener('click', function () {
+    const btn = this;
+    const text = document.getElementById('result-text').innerText.trim();
+
+    navigator.clipboard.writeText(text).then(function () {
+        const old = btn.textContent;
+        btn.textContent = 'Скопійовано!';
+        setTimeout(function () { btn.textContent = old; }, 1500);
+    }).catch(function () {
+        alert('Не вдалося скопіювати');
+    });
+});
+</script>
 
 {% endblock %}
