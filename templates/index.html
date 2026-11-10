@@ -3,8 +3,8 @@
 {% block content %}
 <h1>{% block title %} Список унікальних слів {% endblock %}</h1>
 
-<form action="{{ url_for('result') }}" method="post">
-<!--<form action = "/result" method = "POST">-->
+<!--<form action="{{ url_for('result') }}" method="post">-->
+<form action = "/result" method = "POST">
 <form method="post">
     <div class="form-group">
         <label for="separator">Розділювач</label>
