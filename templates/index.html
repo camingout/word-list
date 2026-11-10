@@ -1,8 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-{% block title %} Розбити текст по розділювачу | Прибрати переноси з тексту | SeoTools {% endblock %}
-    <h2 class="h5 mt-3">Розділити текст</h2>
+    <h2 class="h5 mt-3">{% block title %} Розділити текст {% endblock %}</h2>
 <form action="{{ url_for('final') }}" method="post">
     <div class="form-group mb-2">
         <label for="split-content" class="mb-1">Текст, який потрібно розділити</label>
@@ -17,7 +16,7 @@
 
 <hr class="my-3">
 
-<h2 class="h5">Прибрати переноси</h2>
+<h2 class="h5">{% block title %} Прибрати переноси з тексту {% endblock %}</h2>
 <form action="{{ url_for('join_text') }}" method="post">
     <div class="form-group mb-2">
         <label for="join-content" class="mb-1">Текст, з якого прибрати переноси</label>
