@@ -16,5 +16,17 @@
         <button type="submit" class="btn btn-primary">Submit</button>
     </div>
 </form>
-
+    
+<form action="{{ url_for('join_text') }}" method="post">
+    <div class="form-group">
+        <label for="join-content">Текст, з якого прибрати переноси</label>
+        <textarea name="content" id="join-content" class="form-control" rows="8"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="glue">Чим склеїти рядки (за замовчуванням пробіл)</label>
+        <input type="text" name="glue" id="glue" class="form-control" placeholder=", ">
+    </div>
+    <button type="submit" class="btn btn-primary">Прибрати переноси</button>
+</form>
+    
 {% endblock %}
