@@ -22,7 +22,20 @@ def final():
         return render_template("result.html", result=result)
     return redirect(url_for("index"))
 
+@app.route("/join", methods=["POST", "GET"])
+def join_text():
+    if request.method == "POST":
+        content = request.form.get("content", "")
+        glue = request.form.get("glue", " ")
+        if glue == "":
+            glue = " "
 
+        # splitlines() ловить і \n, і \r\n
+        lines = [line.strip() for line in content.splitlines()]
+        result = glue.join(line for line in lines if line)
+
+        return render_template("join_result.html", result=result)
+    return redirect(url_for("index"))
 
 if __name__ == "__main__":
     app.run(debug=True) 
