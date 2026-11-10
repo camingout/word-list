@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{% block title %} Текст без переносів {% endblock %}</h1>
+
+<div class="form-group">
+    <textarea id="result-text" class="form-control" rows="10" readonly>{{ result }}</textarea>
+</div>
+
+<button type="button" id="copy-btn" class="btn btn-primary">Скопіювати результат</button>
+<a href="{{ url_for('index') }}" class="btn btn-secondary">Назад</a>
+
+<script>
+document.getElementById('copy-btn').addEventListener('click', function () {
+    const btn = this;
+    const text = document.getElementById('result-text').value;
+
+    navigator.clipboard.writeText(text).then(function () {
+        const old = btn.textContent;
+        btn.textContent = 'Скопійовано!';
+        setTimeout(function () { btn.textContent = old; }, 1500);
+    });
+});
+</script>
+{% endblock %}
