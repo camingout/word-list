@@ -10,18 +10,18 @@ def index():
     return render_template('index.html')
     #return "Hello World"
 
-
-@app.route("/result",methods = ['POST', 'GET'])
+@app.route("/result", methods=["POST", "GET"])
 def final():
-    if request.method == 'POST':
-        separator = request.form['separator']
-        result = request.form['content']
+    if request.method == "POST":
+        separator = request.form.get("separator", "")
+        content = request.form.get("content", "")
         if separator:
-            result = list(set(result.split(f"{separator}")))
+            result = list(set(content.split(separator)))
         else:
-            result = list(set(result.split()))
-        #result = list(set(result.split(f"{separator}")))
+            result = list(set(content.split()))
         return render_template("result.html", result=result)
+    return redirect(url_for("index"))
+
 
 
 if __name__ == "__main__":
