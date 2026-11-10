@@ -2,7 +2,7 @@
 
 {% block content %}
 <h1>{% block title %} Список унікальних слів {% endblock %}</h1>
-<hr class="my-4"> Розділити текст <h2>
+    <hr class="my-4"><h2>Розділити текст</h2>
 <form action="{{ url_for('final') }}" method="post">
     <div class="form-group">
         <label for="split-content">Текст, який потрібно розділити</label>
@@ -14,8 +14,7 @@
     </div>
     <button type="submit" class="btn btn-primary">Розділити текст</button>
 </form>
-<hr class="my-4"> Прибрати переноси <h2>
-    
+<hr class="my-4"><h2>Прибрати переноси</h2>   
 <form action="{{ url_for('join_text') }}" method="post">
     <div class="form-group">
         <label for="join-content">Текст, з якого прибрати переноси</label>
